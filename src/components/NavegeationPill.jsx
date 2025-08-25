@@ -25,10 +25,10 @@ export default function NavegeationPill() {
 			initial={{ opacity: 0, y: -20 }}
 			animate={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.8, delay: 0.5 }}
-			className="fixed top-6 left-1/2 transform -translate-x-1/2 z-50"
+			className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50"
 		>
-			<div className="bg-gray-900/10 backdrop-blur-md border border-white/10 rounded-full px-3 py-2 shadow-2xl">
-				<div className="flex items-center space-x-1">
+			<div className="bg-gray-200/5 backdrop-blur-xs border border-white/10 rounded-full px-3 py-4 shadow-2xl">
+				<div className="flex items-center space-x-1 px-5">
 					{navItems.map((item) => (
 						<motion.button
 							key={item.id}

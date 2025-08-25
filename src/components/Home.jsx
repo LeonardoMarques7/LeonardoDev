@@ -35,7 +35,7 @@ const Home = () => {
 					React | Node.js | Tailwind | MongoDB
 				</p>
 			</div>
-			<ChevronDown className="icon__home text-white text-center w-full size-10 absolute bottom-5 animate-bounce" />
+			<ChevronDown className="icon__home text-white text-center w-full size-5 absolute bottom-5 animate-bounce" />
 		</section>
 	);
 };

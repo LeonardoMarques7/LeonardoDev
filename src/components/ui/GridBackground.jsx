@@ -12,10 +12,12 @@ export default function GridBackground() {
 		let width = (canvas.width = window.innerWidth);
 		let height = (canvas.height = window.innerHeight);
 
-		const gridSize = 40; // tamanho de cada quadrado
-		const fadeRadius = 150; // raio do efeito ao redor do mouse
+		const gridSize = 30; // tamanho de cada quadrado
+		const hoverRadius = 60; // raio da área de hover em volta do mouse
+		let mouse = null;
+		let animationFrameId;
 
-		const draw = (mouse) => {
+		const draw = () => {
 			ctx.clearRect(0, 0, width, height);
 
 			// Fundo preto
@@ -24,42 +26,61 @@ export default function GridBackground() {
 
 			for (let x = 0; x <= width; x += gridSize) {
 				for (let y = 0; y <= height; y += gridSize) {
-					// Opacidade base dos quadrados
-					let opacity = 0.2; // sempre visível
+					let isHovered = false;
 
 					if (mouse) {
 						const dx = mouse.x - (x + gridSize / 2);
 						const dy = mouse.y - (y + gridSize / 2);
 						const distance = Math.sqrt(dx * dx + dy * dy);
 
-						if (distance < fadeRadius) {
-							opacity = 0.2 + 0.6 * (1 - distance / fadeRadius); // aumenta opacidade perto do mouse
+						if (distance < hoverRadius) {
+							isHovered = true;
 						}
 					}
 
-					ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+					// borda do quadrado (sempre visível)
+					ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
 					ctx.beginPath();
 					ctx.rect(x, y, gridSize, gridSize);
 					ctx.stroke();
+
+					// se estiver no hover → quadrado preenchido branco
+					if (isHovered) {
+						ctx.fillStyle = "rgba(0, 133, 255, 1)";
+						ctx.strokeStyle = "rgba(000, 000, 000, 1)";
+						ctx.fillRect(x, y, gridSize, gridSize);
+						ctx.stroke();
+					}
 				}
 			}
+
+			animationFrameId = requestAnimationFrame(draw);
 		};
 
-		const handleMouseMove = (e) => draw({ x: e.clientX, y: e.clientY });
+		const handleMouseMove = (e) => {
+			mouse = { x: e.clientX, y: e.clientY };
+		};
+
+		const handleMouseLeave = () => {
+			mouse = null; // some o efeito quando sai do canvas
+		};
+
 		const handleResize = () => {
 			width = canvas.width = window.innerWidth;
 			height = canvas.height = window.innerHeight;
-			draw();
 		};
 
 		window.addEventListener("mousemove", handleMouseMove);
+		window.addEventListener("mouseleave", handleMouseLeave);
 		window.addEventListener("resize", handleResize);
 
-		draw(); // desenha inicialmente com grid sempre visível
+		draw(); // inicia animação
 
 		return () => {
 			window.removeEventListener("mousemove", handleMouseMove);
+			window.removeEventListener("mouseleave", handleMouseLeave);
 			window.removeEventListener("resize", handleResize);
+			cancelAnimationFrame(animationFrameId);
 		};
 	}, []);
 
