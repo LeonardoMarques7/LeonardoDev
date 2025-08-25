@@ -12,9 +12,10 @@ export default function GridBackground() {
 		let width = (canvas.width = window.innerWidth);
 		let height = (canvas.height = window.innerHeight);
 
-		const gridSize = 30; // tamanho de cada quadrado
-		const hoverRadius = 60; // raio da área de hover em volta do mouse
+		const gridSize = 50; // tamanho de cada quadrado
+		const fadeRadius = 150; // raio do efeito ao redor do mouse
 		let mouse = null;
+		let time = 0;
 		let animationFrameId;
 
 		const draw = () => {
@@ -26,43 +27,40 @@ export default function GridBackground() {
 
 			for (let x = 0; x <= width; x += gridSize) {
 				for (let y = 0; y <= height; y += gridSize) {
-					let isHovered = false;
+					// Opacidade base
+					let opacity = 0.2;
 
+					// Efeito pulsante global (respiração)
+					const pulse = 0 * Math.sin(time / 10 + x / 50);
+					opacity += pulse;
+
+					// Efeito de foco no mouse
 					if (mouse) {
 						const dx = mouse.x - (x + gridSize / 2);
 						const dy = mouse.y - (y + gridSize / 2);
 						const distance = Math.sqrt(dx * dx + dy * dy);
 
-						if (distance < hoverRadius) {
-							isHovered = true;
+						if (distance < fadeRadius) {
+							opacity = 0.2 + 0.6 * (1 - distance / fadeRadius) + pulse;
 						}
 					}
 
-					// borda do quadrado (sempre visível)
-					ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
+					// Garantir que a opacidade nunca seja negativa
+					opacity = Math.max(0.05, opacity);
+
+					ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
 					ctx.beginPath();
 					ctx.rect(x, y, gridSize, gridSize);
 					ctx.stroke();
-
-					// se estiver no hover → quadrado preenchido branco
-					if (isHovered) {
-						ctx.fillStyle = "rgba(0, 133, 255, 1)";
-						ctx.strokeStyle = "rgba(000, 000, 000, 1)";
-						ctx.fillRect(x, y, gridSize, gridSize);
-						ctx.stroke();
-					}
 				}
 			}
 
+			time++;
 			animationFrameId = requestAnimationFrame(draw);
 		};
 
 		const handleMouseMove = (e) => {
 			mouse = { x: e.clientX, y: e.clientY };
-		};
-
-		const handleMouseLeave = () => {
-			mouse = null; // some o efeito quando sai do canvas
 		};
 
 		const handleResize = () => {
@@ -71,14 +69,12 @@ export default function GridBackground() {
 		};
 
 		window.addEventListener("mousemove", handleMouseMove);
-		window.addEventListener("mouseleave", handleMouseLeave);
 		window.addEventListener("resize", handleResize);
 
 		draw(); // inicia animação
 
 		return () => {
 			window.removeEventListener("mousemove", handleMouseMove);
-			window.removeEventListener("mouseleave", handleMouseLeave);
 			window.removeEventListener("resize", handleResize);
 			cancelAnimationFrame(animationFrameId);
 		};

@@ -19,6 +19,18 @@ export default function NavegeationPill() {
 		{ id: "Sobre", icon: User, label: "Sobre" },
 		{ id: "Contato", icon: Mail, label: "Contato" },
 	];
+	const [isDarkBackground, setIsDarkBackground] = useState(true);
+
+	// Exemplo simples: muda baseado na seção
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollY = window.scrollY;
+			setIsDarkBackground(scrollY < 300); // fundo preto até 300px
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	return (
 		<motion.nav
@@ -27,7 +39,7 @@ export default function NavegeationPill() {
 			transition={{ duration: 0.8, delay: 0.5 }}
 			className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50"
 		>
-			<div className="bg-gray-200/5 backdrop-blur-xs border border-white/10 rounded-full px-3 py-4 shadow-2xl">
+			<div className="bg-gray-100/5 backdrop-blur-xs border border-white/10 rounded-full px-3 py-4 shadow-2xl">
 				<div className="flex items-center space-x-1 px-5">
 					{navItems.map((item) => (
 						<motion.button
@@ -37,8 +49,12 @@ export default function NavegeationPill() {
 							whileTap={{ scale: 0.95 }}
 							className={`relative px-4 cursor-pointer py-2 rounded-full transition-all duration-300 ${
 								activeSection === item.id
-									? "text-white"
-									: "text-white/60 hover:text-white/80"
+									? isDarkBackground
+										? "text-white" // fundo escuro
+										: "text-gray-900" // fundo claro
+									: isDarkBackground
+									? "text-white/60 hover:text-white/80"
+									: "text-gray-600 hover:text-gray-800"
 							}`}
 						>
 							{activeSection === item.id && (
