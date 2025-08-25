@@ -7,14 +7,14 @@ import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 function App() {
 	return (
-		<>
+		<div className="flex flex-col gap-10">
 			<NavegeationPill />
 			<Home />
 			<Projetos />
 			<About />
 			<Contato />
 			<Footer />
-		</>
+		</div>
 	);
 }
 

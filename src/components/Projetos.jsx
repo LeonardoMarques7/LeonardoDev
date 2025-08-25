@@ -1,7 +1,7 @@
 import React from "react";
 
 const Projetos = () => {
-	return <div>Tela de Projetos</div>;
+	return <div id="Projetos">Tela de Projetos</div>;
 };
 
 export default Projetos;

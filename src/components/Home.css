@@ -1,3 +1,33 @@
 .home__techs {
     word-spacing: 10px;
 }
+
+@media (width<= 768px) {
+    .button__home {
+        padding: 15px;
+    }
+
+    .home__techs {
+        font-size: 15px;
+    }
+
+    .container__texts {
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home {
+        height: 100svh;
+    }
+}
+
+@media (width >= 800px) {
+    .container__texts {
+        margin-top: 2rem;
+    }
+
+    .icon__home {
+        bottom: 0;
+    }
+}
