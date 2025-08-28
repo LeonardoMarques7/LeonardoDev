@@ -63,7 +63,7 @@ const Projetos = () => {
 									</div>
 
 									{/* Container da tela */}
-									<div className="relative w-full h-[450px] overflow-hidden rounded-b-xl p-0">
+									<div className="relative w-full h-[450px] overflow-hidden rounded-b-xl max-w- !min-w-full !px-0">
 										<Carousel
 											plugins={[
 												Autoplay({
@@ -74,15 +74,17 @@ const Projetos = () => {
 											]}
 											className="w-full h-full"
 										>
-											<CarouselContent className="w-full h-full">
+											<CarouselContent className="">
+												{" "}
+												{/* remove o espaço */}
 												{item.image.map((image, i) => (
 													<CarouselItem
 														key={i}
-														className="w-full h-[450px] flex-shrink-0" // força altura
+														className="w-full h-[450px] !basis-auto flex-shrink-0 " // remove padding lateral
 													>
 														<img
 															src={image}
-															className="w-full h-full object-cover rounded-b-xl" // ocupa tudo
+															className="w-full h-full object-cover object-left rounded-tr-xl rounded-b-xl"
 															alt="Print do Projeto"
 														/>
 													</CarouselItem>
