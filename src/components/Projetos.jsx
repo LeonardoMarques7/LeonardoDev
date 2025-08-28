@@ -63,7 +63,7 @@ const Projetos = () => {
 									</div>
 
 									{/* Container da tela */}
-									<div className="relative w-full h-[450px] overflow-hidden rounded-b-xl max-w- !min-w-full !px-0">
+									<div className="relative w-full overflow-hidden rounded-b-xl !min-w-full !px-0">
 										<Carousel
 											plugins={[
 												Autoplay({
@@ -80,16 +80,23 @@ const Projetos = () => {
 												{item.image.map((image, i) => (
 													<CarouselItem
 														key={i}
-														className="w-full h-[450px] !basis-auto flex-shrink-0 " // remove padding lateral
+														className="w-full !basis-auto flex-shrink-0 " // remove padding lateral
 													>
 														<img
 															src={image}
-															className="w-full h-full object-cover object-left rounded-tr-xl rounded-b-xl"
+															className="w-full h-full object-cover object-center rounded-tr-xl rounded-b-xl"
 															alt="Print do Projeto"
 														/>
 													</CarouselItem>
 												))}
 											</CarouselContent>
+											<span className="relative min-w-max bottom-3 left-0 z-99 bg-red-100">
+												<p className="text-transparent opacity-0 cursor-default">
+													Barra de Navegação
+												</p>
+												<CarouselPrevious className="carroseul__voltar rounded-none bg-gray-600  !border-gray-600 px-5 py-4" />
+												<CarouselNext className="carroseul__proximo rounded-none rounded-tr-xl bg-gray-600 !border-gray-600 px-5 py-4" />
+											</span>
 										</Carousel>
 
 										{/* Botões */}
