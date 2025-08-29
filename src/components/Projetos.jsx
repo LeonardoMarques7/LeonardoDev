@@ -1,4 +1,4 @@
-import { image } from "motion/react-client";
+import { image, title } from "motion/react-client";
 import React from "react";
 import imageCorinthiansPage from "../assets/images/Projetos/image.png";
 import imageCorinthiansPage2 from "../assets/images/Projetos/image2.png";
@@ -8,6 +8,20 @@ import imageCorinthiansPage5 from "../assets/images/Projetos/image5.png";
 import imageCorinthiansPage6 from "../assets/images/Projetos/image6.png";
 import imageCorinthiansPage7 from "../assets/images/Projetos/image7.png";
 import imageCorinthiansPage8 from "../assets/images/Projetos/image8.png";
+
+//
+
+import imagePlayer from "../assets/images/Projetos/imagePlayer.png";
+import imagePlayer2 from "../assets/images/Projetos/imagePlayer2.png";
+import imagePlayer3 from "../assets/images/Projetos/imagePlayer3.png";
+
+//
+
+import imageWiki from "../assets/images/Projetos/imageWiki.png";
+import imageWiki2 from "../assets/images/Projetos/imageWiki2.png";
+import imageWiki3 from "../assets/images/Projetos/imageWiki3.png";
+import imageWiki4 from "../assets/images/Projetos/imageWiki4.png";
+
 import { ExternalLink } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -17,6 +31,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
+import { color } from "motion";
 const navItems = [
 	{
 		id: 1,
@@ -33,9 +48,60 @@ const navItems = [
 		title: "CorinthiansPage",
 		linkCode: "https://github.com/LeonardoMarques7/CorinthiansPage",
 		linkDemo: "https://corinthianspage.netlify.app/",
-		badge: ["React", "Tailwind"],
+		badge: [
+			{
+				text: "React",
+				color: "bg-gray-500 text-white",
+			},
+			{
+				text: "Tailwind",
+				color: "bg-blue-500 text-white",
+			},
+		],
 		description:
 			"Página sobre o Corinthians, desenvolvida com foco em design responsivo e identidade visual do clube, destacando informações, títulos e história.",
+	},
+	{
+		id: 2,
+		image: [imagePlayer, imagePlayer2, imagePlayer3],
+		title: "Player de Música",
+		linkCode: "https://github.com/LeonardoMarques7/Projeto_music",
+		linkDemo: "https://projeto-music.onrender.com/",
+		badge: [
+			{
+				text: "React",
+				color: "bg-gray-500 text-white",
+			},
+			{
+				text: "MongoDB",
+				color: "bg-green-500 text-white",
+			},
+		],
+		description:
+			"Um site de streaming de música moderno e responsivo, inspirado no Spotify. Desenvolvido com React.js, JavaScript, HTML, CSS, Tailwind CSS e MongoDB. O projeto foi estruturado para suportar uma lista de músicas royalty-free",
+	},
+	{
+		id: 2,
+		image: [imageWiki, imageWiki2, imageWiki3, imageWiki4],
+		title: "Wiki do Artista Jão",
+		linkCode: "https://github.com/LeonardoMarques7/projeto_wiki_jao",
+		linkDemo: "https://projeto-wiki-jao.onrender.com/",
+		badge: [
+			{
+				text: "React",
+				color: "bg-gray-500 text-white",
+			},
+			{
+				text: "MongoDB",
+				color: "bg-green-500 text-white",
+			},
+			{
+				text: "Tailwind",
+				color: "bg-blue-500 text-white",
+			},
+		],
+		description:
+			"wiki colaborativa sobre Jão, reunindo sua biografia, fotos, álbuns e datas de shows. Aqui, fãs podem explorar detalhes da carreira do cantor, conhecer suas músicas e acompanhar tudo sobre seus lançamentos e eventos. Um espaço completo para celebrar a trajetória de Jão.",
 	},
 ];
 
@@ -47,19 +113,19 @@ const Projetos = () => {
 				<div className="bg-blue-400 h-1 w-50 mx-auto"></div>
 			</div>
 			<div className="container__projetos">
-				<ul className="flex flex-col gap-5">
+				<ul className="flex flex-col gap-20">
 					{navItems.map((item, index) => (
 						<li
-							className="item__projeto max-w-[80svw] rounded-xl flex gap-10 mx-auto"
+							className={`item__projeto max-w-[80svw] rounded-xl flex gap-10 mx-auto ${
+								index % 2 === 0 ? "item__left" : "item__right flex-row-reverse"
+							}`}
 							key={index}
 						>
 							{/* Imagem ocupa metade */}
 							<div className="image__projeto relative flex-1 rounded-xl">
 								<div className="mockup-browser border border-base-300 w-full ">
 									<div className="mockup-browser-toolbar">
-										<div className="input">
-											https://corinthianspage.netlify.app/
-										</div>
+										<div className="input">{item.linkDemo}</div>
 									</div>
 
 									{/* Container da tela */}
@@ -90,10 +156,7 @@ const Projetos = () => {
 													</CarouselItem>
 												))}
 											</CarouselContent>
-											<span className="relative min-w-max bottom-3 left-0 z-99 bg-red-100">
-												<p className="text-transparent opacity-0 cursor-default">
-													Barra de Navegação
-												</p>
+											<span className="relative min-w-max w-full bottom-5 left-0 z-99 bg-red-100">
 												<CarouselPrevious className="carroseul__voltar rounded-none bg-gray-600  !border-gray-600 px-5 py-4" />
 												<CarouselNext className="carroseul__proximo rounded-none rounded-tr-xl bg-gray-600 !border-gray-600 px-5 py-4" />
 											</span>
@@ -142,14 +205,18 @@ const Projetos = () => {
 							</div>
 
 							{/* Textos ocupam a outra metade */}
-							<div className="texts__projetos flex flex-col gap-4 flex-1">
+							<div
+								className={`texts__projetos flex flex-col gap-4 flex-1 ${
+									index % 2 === 0 ? "item__left" : "items-end text-end"
+								}`}
+							>
 								<div className="badges__tech flex gap-2">
 									{item.badge.map((b, i) => (
 										<span
 											key={i}
-											className="badge bg-blue-300 text-cyan-700 px-5 py-1 text-sm rounded-full"
+											className={`badg px-5 py-1 text-sm rounded-full ${b.color}`}
 										>
-											{b}
+											{b.text}
 										</span>
 									))}
 								</div>
