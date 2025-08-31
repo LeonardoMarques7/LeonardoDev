@@ -22,6 +22,8 @@ import imageWiki2 from "../assets/images/Projetos/imageWiki2.png";
 import imageWiki3 from "../assets/images/Projetos/imageWiki3.png";
 import imageWiki4 from "../assets/images/Projetos/imageWiki4.png";
 
+import "./Projetos.css";
+
 import { ExternalLink } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
 import {
@@ -81,7 +83,7 @@ const navItems = [
 			"Um site de streaming de música moderno e responsivo, inspirado no Spotify. Desenvolvido com React.js, JavaScript, HTML, CSS, Tailwind CSS e MongoDB. O projeto foi estruturado para suportar uma lista de músicas royalty-free",
 	},
 	{
-		id: 2,
+		id: 3,
 		image: [imageWiki, imageWiki2, imageWiki3, imageWiki4],
 		title: "Wiki do Artista Jão",
 		linkCode: "https://github.com/LeonardoMarques7/projeto_wiki_jao",
@@ -107,7 +109,7 @@ const navItems = [
 
 const Projetos = () => {
 	return (
-		<section id="Projetos">
+		<section id="Projetos" className="min-h-screen relative top-15">
 			<div className="header__section text-center text-3xl font-bold text-gray-600 flex flex-col gap-5 mb-15">
 				Projeto Selecionados
 				<div className="bg-blue-400 h-1 w-50 mx-auto"></div>
@@ -122,8 +124,8 @@ const Projetos = () => {
 							key={index}
 						>
 							{/* Imagem ocupa metade */}
-							<div className="image__projeto relative flex-1 rounded-xl">
-								<div className="mockup-browser border border-base-300 w-full ">
+							<div className="image__projeto relative flex-1">
+								<div className="mockup-browser border border-base-300 rounded-xl w-full ">
 									<div className="mockup-browser-toolbar">
 										<div className="input">{item.linkDemo}</div>
 									</div>
@@ -150,13 +152,13 @@ const Projetos = () => {
 													>
 														<img
 															src={image}
-															className="w-full h-full object-cover object-center rounded-tr-xl rounded-b-xl"
+															className="w-full h-full object-cover object-center"
 															alt="Print do Projeto"
 														/>
 													</CarouselItem>
 												))}
 											</CarouselContent>
-											<span className="relative min-w-max w-full bottom-5 left-0 z-99 bg-red-100">
+											<span className="carroseul__actions relative min-w-max w-full bottom-5 left-0 z-99">
 												<CarouselPrevious className="carroseul__voltar rounded-none bg-gray-600  !border-gray-600 px-5 py-4" />
 												<CarouselNext className="carroseul__proximo rounded-none rounded-tr-xl bg-gray-600 !border-gray-600 px-5 py-4" />
 											</span>
@@ -167,7 +169,7 @@ const Projetos = () => {
 											<div className="action__item">
 												<a
 													href={item.linkDemo}
-													className="action__link bg-white rounded-tl-xl hover:bg-gray-200 duration-300 transition-all ease-in-out flex gap-2 px-5 py-4"
+													className="action__link bg-white hover:bg-gray-200 duration-300 transition-all ease-in-out flex gap-2 px-5 py-4"
 												>
 													<ExternalLink />
 													Ver Projeto
