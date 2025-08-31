@@ -1,0 +1,15 @@
+@media (width <=960px) {
+    .container__sobre {
+        flex-direction: column-reverse;
+        gap: 3rem;
+    }
+
+    .texts__sobre {
+        font-size: 1rem;
+    }
+
+    .figure__container  {
+        width: 50svw;
+        margin: 0 auto;
+    }
+}

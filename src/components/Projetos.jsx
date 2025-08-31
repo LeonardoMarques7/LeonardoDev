@@ -109,7 +109,10 @@ const navItems = [
 
 const Projetos = () => {
 	return (
-		<section id="Projetos" className="min-h-screen relative top-15">
+		<section
+			id="Projetos"
+			className="min-h-screen relative top-15 scroll-my-25"
+		>
 			<div className="header__section text-center text-3xl font-bold text-gray-600 flex flex-col gap-5 mb-15">
 				Projeto Selecionados
 				<div className="bg-blue-400 h-1 w-50 mx-auto"></div>

@@ -1,6 +1,7 @@
 import React from "react";
 import fotoLeo from "../assets/images/Sobre/fotoLeo.png";
 import { Marquee } from "@/components/magicui/marquee";
+import "./About.css";
 
 const techBadges = [
 	{
@@ -39,7 +40,10 @@ const techBadges = [
 
 const About = () => {
 	return (
-		<div id="Sobre" className="min-h-screen relative top-15">
+		<section
+			id="Sobre"
+			className="min-h-screen mb-15 relative top-15 scroll-my-30"
+		>
 			{" "}
 			<div className="header__section text-center text-3xl font-bold text-gray-600 flex flex-col gap-5 mb-15">
 				Sobre mim
@@ -77,14 +81,16 @@ const About = () => {
 					{techBadges.map((item, i) => (
 						<li
 							key={i}
-							className={`badge__tech list-none -z-10 px-5 py-2 rounded-full ${item.style}`}
+							className={`badge__tech transition-all ease-in-out duration-300 hover:scale-110 list-none -z-10 px-5 py-2 rounded-full ${
+								item.style
+							} ${i % 2 === 0 ? " hover:rotate-2" : " hover:-rotate-2"}`}
 						>
 							{item.tech}
 						</li>
 					))}
 				</Marquee>
 			</div>
-		</div>
+		</section>
 	);
 };
 
