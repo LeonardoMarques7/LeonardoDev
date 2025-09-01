@@ -2,37 +2,55 @@ import React from "react";
 import fotoLeo from "../assets/images/Sobre/fotoLeo.png";
 import { Marquee } from "@/components/magicui/marquee";
 import "./About.css";
+import {
+	SiReact,
+	SiNodedotjs,
+	SiMongodb,
+	SiTailwindcss,
+	SiExpress,
+	SiJavascript,
+	SiGithub,
+	SiGit,
+} from "react-icons/si";
 
 const techBadges = [
 	{
+		icon: <SiReact />,
 		tech: "React",
 		style: "bg-blue-100 text-blue-600",
 	},
 	{
+		icon: <SiNodedotjs />,
 		tech: "Node.js",
 		style: "bg-green-200 text-green-700",
 	},
 	{
+		icon: <SiMongodb />,
 		tech: "MongoDB",
 		style: "bg-green-600 text-white",
 	},
 	{
+		icon: <SiTailwindcss />,
 		tech: "Tailwind",
 		style: "bg-blue-400 text-white",
 	},
 	{
+		icon: <SiExpress />,
 		tech: "Express.js",
 		style: "bg-gray-300 text-gray-800",
 	},
 	{
+		icon: <SiJavascript />,
 		tech: "JavaScript",
 		style: "bg-yellow-200 text-yellow-700",
 	},
 	{
+		icon: <SiGithub />,
 		tech: "GitHub",
 		style: "bg-gray-600 text-white",
 	},
 	{
+		icon: <SiGit />,
 		tech: "Git",
 		style: "bg-red-300 text-red-700",
 	},
@@ -81,10 +99,11 @@ const About = () => {
 					{techBadges.map((item, i) => (
 						<li
 							key={i}
-							className={`badge__tech transition-all ease-in-out duration-300 hover:scale-110 list-none -z-10 px-5 py-2 rounded-full ${
+							className={`badge__tech flex items-center gap-4 transition-all ease-in-out duration-300 hover:scale-110 list-none -z-10 px-5 py-2 rounded-full ${
 								item.style
 							} ${i % 2 === 0 ? " hover:rotate-2" : " hover:-rotate-2"}`}
 						>
+							{item.icon}
 							{item.tech}
 						</li>
 					))}
