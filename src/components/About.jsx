@@ -58,10 +58,7 @@ const techBadges = [
 
 const About = () => {
 	return (
-		<section
-			id="Sobre"
-			className="min-h-screen mb-15 relative top-15 scroll-my-30"
-		>
+		<section id="Sobre" className="h-full relative top-15 scroll-my-30">
 			{" "}
 			<div className="header__section text-center text-3xl font-bold text-gray-600 flex flex-col gap-5 mb-15">
 				Sobre mim

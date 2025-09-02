@@ -1,3 +1,10 @@
+
+@media (width >= 80rem) {
+    #Sobre {
+        height: 100%;
+    }
+}
+
 @media (width <=960px) {
     .container__sobre {
         flex-direction: column-reverse;

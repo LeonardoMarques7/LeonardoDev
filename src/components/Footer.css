@@ -1,0 +1,16 @@
+@media (width <= 868px) {
+
+    .containter__links-texts {
+        flex-direction: column;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        justify-content: center;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .texts__footer {
+        text-align: center;
+    }
+}
+

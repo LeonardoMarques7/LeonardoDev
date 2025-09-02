@@ -1,0 +1,5 @@
+@media (width <= 868px) {
+    .image__contato {
+        width: 30px;
+    }
+}
