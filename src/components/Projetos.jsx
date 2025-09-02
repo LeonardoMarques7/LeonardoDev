@@ -172,7 +172,7 @@ const Projetos = () => {
 											<div className="action__item">
 												<a
 													href={item.linkDemo}
-													className="action__link bg-white hover:bg-gray-200 duration-300 transition-all ease-in-out flex gap-2 px-5 py-4"
+													className="action__link bg-white rounded-tl-xl hover:bg-gray-200 duration-300 transition-all ease-in-out flex gap-2 px-5 py-4"
 												>
 													<ExternalLink />
 													Ver Projeto
