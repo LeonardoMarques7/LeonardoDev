@@ -12,6 +12,8 @@ import {
 	SiGithub,
 	SiGit,
 } from "react-icons/si";
+import ScrollReveal from "scrollreveal";
+import { useEffect } from "react";
 
 const techBadges = [
 	{
@@ -57,6 +59,15 @@ const techBadges = [
 ];
 
 const About = () => {
+	useEffect(() => {
+		ScrollReveal().reveal(".reveal", {
+			origin: "left", // de onde o elemento vai aparecer
+			distance: "50px", // distância do elemento
+			duration: 2000, // duração da animação em ms
+			delay: 0, // delay inicial
+			reset: true, // se true, animação se repete quando rolar a tela novamente
+		});
+	}, []);
 	return (
 		<section id="Sobre" className="h-full relative top-15 scroll-my-30">
 			{" "}
@@ -65,7 +76,7 @@ const About = () => {
 				<div className="bg-blue-400 h-1 w-50 mx-auto"></div>
 			</div>
 			<div className="container__sobre flex justify-between  mx-auto  max-w-[80svw]">
-				<div className="texts__sobre max-w-125 text-xl flex flex-col leading-relaxed">
+				<div className="texts__sobre max-w-125 text-xl flex reveal flex-col leading-relaxed">
 					<p className="mb-4">
 						Sou Leonardo Marques, estudante de Ciência da Computação na UNIP e
 						formado em Técnico em Desenvolvimento de Sistemas pela Etec Fernando

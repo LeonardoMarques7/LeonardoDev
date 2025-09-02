@@ -34,6 +34,10 @@ import {
 	CarouselPrevious,
 } from "@/components/ui/carousel";
 import { color } from "motion";
+
+import ScrollReveal from "scrollreveal";
+import { useEffect } from "react";
+
 const navItems = [
 	{
 		id: 1,
@@ -108,6 +112,26 @@ const navItems = [
 ];
 
 const Projetos = () => {
+	useEffect(() => {
+		ScrollReveal().reveal(".reveal", {
+			origin: "left", // de onde o elemento vai aparecer
+			distance: "50px", // distância do elemento
+			duration: 2000, // duração da animação em ms
+			delay: 0,
+			reset: true, // se true, animação se repete quando rolar a tela novamente
+		});
+	}, []);
+
+	useEffect(() => {
+		ScrollReveal().reveal(".revealR", {
+			origin: "right", // de onde o elemento vai aparecer
+			distance: "50px", // distância do elemento
+			duration: 2000, // duração da animação em ms
+			delay: 0,
+			reset: true, // se true, animação se repete quando rolar a tela novamente
+		});
+	}, []);
+
 	return (
 		<section
 			id="Projetos"
@@ -122,7 +146,9 @@ const Projetos = () => {
 					{navItems.map((item, index) => (
 						<li
 							className={`item__projeto max-w-[80svw] rounded-xl flex gap-10 mx-auto ${
-								index % 2 === 0 ? "item__left" : "item__right flex-row-reverse"
+								index % 2 === 0
+									? "item__left reveal"
+									: "item__right flex-row-reverse revealR"
 							}`}
 							key={index}
 						>
