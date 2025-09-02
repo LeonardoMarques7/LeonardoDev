@@ -275,27 +275,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-.carroseul__voltar {
-  left: 0px;
-}
-.carroseul__proximo {
-  left: 50px;
-}
-
-.carroseul__proximo,
-.carroseul__voltar {
-  position: absolute !important;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 50px;
-  color: #fff;
-}
-
-.carroseul__proximo:hover,
-.carroseul__voltar:hover {
-  background-color: #1e2939;
-}

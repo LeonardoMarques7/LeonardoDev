@@ -25,7 +25,7 @@ export default function NavegeationPill() {
 	useEffect(() => {
 		const handleScroll = () => {
 			const scrollY = window.scrollY;
-			setIsDarkBackground(scrollY < 300); // fundo preto até 300px
+			setIsDarkBackground(scrollY < 600); // fundo preto até 300px
 		};
 
 		window.addEventListener("scroll", handleScroll);
