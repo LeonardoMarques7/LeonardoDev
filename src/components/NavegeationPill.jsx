@@ -39,7 +39,7 @@ export default function NavegeationPill() {
 			transition={{ duration: 0.8, delay: 0.5 }}
 			className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50"
 		>
-			<div className="bg-gray-100/5 backdrop-blur-xs border border-white/10 rounded-full px-3 py-4 shadow-2xl">
+			<div className="bg-gray-100/5 backdrop-blur-lg border border-white/5 z-100 rounded-full px-3 py-4 shadow-2xl">
 				<div className="flex items-center space-x-1 px-5">
 					{navItems.map((item) => (
 						<motion.button
