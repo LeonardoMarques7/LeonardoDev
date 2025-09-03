@@ -19,7 +19,7 @@ const Home = () => {
 			</div>
 
 			{/* Conteúdo centralizado */}
-			<div className="container__texts relative z-10 flex flex-col gap-5 items-center justify-start w-full h-full text-center py-20 px-4">
+			<div className="container__texts relative z-10 flex flex-col gap-5 items-center justify-center w-full h-full text-center py-20 px-4">
 				<h1 className="text-7xl font-bold text-white">
 					Leo<span className="text-blue-500">.</span>
 				</h1>
@@ -34,13 +34,13 @@ const Home = () => {
 				<div className="mt-0  flex gap-5">
 					<button
 						onClick={() => scrollToSection("Projetos")}
-						className="button__home px-6 py-4 bg-white text-black border-white border-1 rounded-full hover:scale-110  ease-in-out duration-500 cursor-pointer transition"
+						className="button__home px-6 py-4 bg-white text-black border-white border-1 rounded-full hover:scale-110 hover:bg-blue-600 hover:border-blue-600 hover:text-white  ease-in-out duration-500 cursor-pointer transition"
 					>
 						Meus Projetos
 					</button>
 					<button
 						onClick={() => scrollToSection("Contato")}
-						className="button__home px-6 py-4 bg-transparent border-white border-1 text-white rounded-full hover:bg-gray-200 hover:scale-110 hover:text-gray-900 ease-in-out duration-500 cursor-pointer transition"
+						className="button__home px-6 py-4 bg-transparent border-white border-1 text-white rounded-full hover:bg-blue-600 hover:border-blue-600 hover:text-white  hover:scale-110  ease-in-out duration-500 cursor-pointer transition"
 					>
 						Vamos conversar
 					</button>

@@ -21,8 +21,13 @@ export default function GridBackground() {
 		const draw = () => {
 			ctx.clearRect(0, 0, width, height);
 
-			// Fundo preto
-			ctx.fillStyle = "black";
+			// Fundo gradiente azul escuro → claro → azul escuro
+			const gradient = ctx.createLinearGradient(0, 0, 0, height);
+			gradient.addColorStop(0, "#00050cff"); // azul quase preto (topo)
+			gradient.addColorStop(0.5, "#000e1dff"); // azul mais claro (meio)
+			gradient.addColorStop(1, "#00050eff"); // azul quase preto (base)
+
+			ctx.fillStyle = gradient;
 			ctx.fillRect(0, 0, width, height);
 
 			for (let x = 0; x <= width; x += gridSize) {
@@ -46,9 +51,9 @@ export default function GridBackground() {
 					}
 
 					// Garantir que a opacidade nunca seja negativa
-					opacity = Math.max(0.05, opacity);
+					opacity = Math.max(0.01, opacity);
 
-					ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+					ctx.strokeStyle = `rgba(0, 18, 100, ${opacity})`;
 					ctx.beginPath();
 					ctx.rect(x, y, gridSize, gridSize);
 					ctx.stroke();
