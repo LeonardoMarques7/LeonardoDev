@@ -1,6 +1,6 @@
 import { ChevronDown } from "lucide-react";
-import BackgroundWithIcons from "./ui/BackgroundWithIcons";
 import "./Home.css";
+import BackgroundWithIcons from "./ui/BackgroundWithIcons";
 
 const Home = () => {
 	const scrollToSection = (sectionId) => {
@@ -14,7 +14,7 @@ const Home = () => {
 	return (
 		<section className="home w-full md:h-screen relative" id="Home">
 			{/* Background do canvas + ícones */}
-			<div className="background__home absolute inset-0 z-0 bg-black">
+			<div className="background__home absolute inset-0 z-0 ">
 				<BackgroundWithIcons />
 			</div>
 
@@ -34,22 +34,21 @@ const Home = () => {
 				<div className="mt-0  flex gap-5">
 					<button
 						onClick={() => scrollToSection("Projetos")}
-						className="button__home px-6 py-4 bg-white text-black border-white border-1 rounded-full hover:scale-110 hover:bg-blue-600 hover:border-blue-600 hover:text-white  ease-in-out duration-500 cursor-pointer transition"
+						className="button__home px-6 py-4 bg-white text-black border-white border-1 rounded-full hover:scale-110 hover:bg-white hover:border-white hover:text-blue-400  ease-in-out duration-500 cursor-pointer transition"
 					>
 						Meus Projetos
 					</button>
 					<button
 						onClick={() => scrollToSection("Contato")}
-						className="button__home px-6 py-4 bg-transparent border-white border-1 text-white rounded-full hover:bg-blue-600 hover:border-blue-600 hover:text-white  hover:scale-110  ease-in-out duration-500 cursor-pointer transition"
+						className="button__home px-6 py-4 bg-transparent border-white border-1 text-white rounded-full hover:bg-white hover:border-white hover:text-blue-400  hover:scale-110  ease-in-out duration-500 cursor-pointer transition"
 					>
 						Vamos conversar
 					</button>
 				</div>
 				<p className="home__techs text-gray-300 max-w-lg my-10 ">
-					React | Node.js | Tailwind | MongoDB
+					React • Node.js • Tailwind • MongoDB
 				</p>
 			</div>
-			<ChevronDown className="icon__home text-white text-center w-full size-5 absolute bottom-5 animate-bounce" />
 		</section>
 	);
 };

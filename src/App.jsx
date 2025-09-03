@@ -9,9 +9,8 @@ import Contato from "./components/Contato";
 import Footer from "./components/Footer";
 
 function App() {
-	const [isMobile, setIsMobile] = useState(window.innerWidth < 768); // mobile por padrão
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-	// Detecta redimensionamento para mobile
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth < 768);
@@ -21,14 +20,17 @@ function App() {
 	}, []);
 
 	return (
-		<div className="flex flex-col gap-20 overflow-hidden">
-			{isMobile && <MenuBar />}
-			<NavegeationPill />
-			<Home />
-			<Projetos />
-			<About />
-			<Contato />
-			<Footer />
+		<div className="relative w-full min-h-screen ">
+			{/* Conteúdo da página com z-index maior para sobrepor o background */}
+			<div className="relative z-10 flex flex-col gap-20 overflow-hidden">
+				{isMobile && <MenuBar />}
+				<NavegeationPill />
+				<Home />
+				<Projetos />
+				<About />
+				<Contato />
+				<Footer />
+			</div>
 		</div>
 	);
 }

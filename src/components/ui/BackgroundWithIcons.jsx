@@ -1,12 +1,8 @@
 import { Code, Database, Cpu, Terminal, Braces } from "lucide-react";
-import GridBackground from "./GridBackground"; // seu componente do canvas
 
 export default function BackgroundWithIcons() {
 	return (
-		<div className="relative w-full h-dvh overflow-hidden">
-			{/* Canvas do grid */}
-			<GridBackground />
-
+		<div className="relative min-h-screen overflow-hidden rounded-b-xl bg-blue-700 mx-5 mr-5 w-auto shadow-[10px_10px_100px_#59f]">
 			{/* Ícones sobre o fundo */}
 			<Code className="absolute top-10 right-1/5 rotate-20 w-8 h-8 text-gray-600" />
 			<Database className="absolute top-60 right-40 w-8 h-8 text-gray-600" />
