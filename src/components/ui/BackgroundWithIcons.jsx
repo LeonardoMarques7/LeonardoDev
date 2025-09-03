@@ -3,7 +3,7 @@ import GridBackground from "./GridBackground"; // seu componente do canvas
 
 export default function BackgroundWithIcons() {
 	return (
-		<div className="relative w-full h-screen overflow-hidden">
+		<div className="relative w-full h-dvh overflow-hidden">
 			{/* Canvas do grid */}
 			<GridBackground />
 

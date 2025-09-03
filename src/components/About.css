@@ -19,4 +19,8 @@
         width: 50svw;
         margin: 0 auto;
     }
+
+    #Sobre {
+        scroll-margin: 20px;
+    }
 }

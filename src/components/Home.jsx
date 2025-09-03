@@ -3,6 +3,14 @@ import BackgroundWithIcons from "./ui/BackgroundWithIcons";
 import "./Home.css";
 
 const Home = () => {
+	const scrollToSection = (sectionId) => {
+		const element = document.getElementById(sectionId);
+		if (element) {
+			element.scrollIntoView({ behavior: "smooth" });
+			setActiveSection(sectionId);
+		}
+	};
+
 	return (
 		<section className="home w-full md:h-screen relative" id="Home">
 			{/* Background do canvas + ícones */}
@@ -24,10 +32,16 @@ const Home = () => {
 				</p>
 
 				<div className="mt-0  flex gap-5">
-					<button className="button__home px-6 py-4 bg-white text-black border-white border-1 rounded-full hover:scale-110  ease-in-out duration-500 cursor-pointer transition">
+					<button
+						onClick={() => scrollToSection("Projetos")}
+						className="button__home px-6 py-4 bg-white text-black border-white border-1 rounded-full hover:scale-110  ease-in-out duration-500 cursor-pointer transition"
+					>
 						Meus Projetos
 					</button>
-					<button className="button__home px-6 py-4 bg-transparent border-white border-1 text-white rounded-full hover:bg-gray-200 hover:scale-110 hover:text-gray-900 ease-in-out duration-500 cursor-pointer transition">
+					<button
+						onClick={() => scrollToSection("Contato")}
+						className="button__home px-6 py-4 bg-transparent border-white border-1 text-white rounded-full hover:bg-gray-200 hover:scale-110 hover:text-gray-900 ease-in-out duration-500 cursor-pointer transition"
+					>
 						Vamos conversar
 					</button>
 				</div>

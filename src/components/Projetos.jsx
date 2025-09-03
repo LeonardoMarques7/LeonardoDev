@@ -135,7 +135,7 @@ const Projetos = () => {
 	return (
 		<section
 			id="Projetos"
-			className="min-h-screen relative top-15 scroll-my-10"
+			className="h-full static  flex-col gap-10 scroll-my-25"
 		>
 			<div className="header__section text-center text-3xl font-bold text-gray-600 flex flex-col gap-5 mb-15">
 				Projeto Selecionados
@@ -145,7 +145,7 @@ const Projetos = () => {
 				<ul className="flex flex-col gap-20">
 					{navItems.map((item, index) => (
 						<li
-							className={`item__projeto  rounded-xl flex gap-10 mx-auto ${
+							className={`item__projeto max-w-[80svw] rounded-xl flex gap-10 mx-auto ${
 								index % 2 === 0
 									? "item__left reveal"
 									: "item__right flex-row-reverse revealR"

@@ -17,9 +17,6 @@
         justify-content: center;
     }
 
-    .home {
-        height: 100svh;
-    }
 }
 
 @media (width >= 800px) {
