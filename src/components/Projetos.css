@@ -31,6 +31,9 @@
 @media (width <=960px) {
     .item__projeto {
         flex-direction: column;
+        max-width: 90svw;
+        position: relative;
+        overflow-x: hidden;
     }
 
     .actions__projeto {
@@ -53,7 +56,4 @@
         display: none;
     }
 
-    .item__projeto {
-        max-width: 90svw;
-    }
 }

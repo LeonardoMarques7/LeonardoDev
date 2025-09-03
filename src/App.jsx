@@ -21,7 +21,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className="flex flex-col gap-10">
+		<div className="flex flex-col gap-10 overflow-hidden">
 			{isMobile && <MenuBar />}
 			<NavegeationPill />
 			<Home />
