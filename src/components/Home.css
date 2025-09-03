@@ -16,6 +16,13 @@
         align-items: center;
         justify-content: center;
     }
+    
+    .bg__home {
+        width: 100%;
+        margin: 0px;
+        height: 100svh;
+        border-radius: 0px;
+    }
 
 }
 

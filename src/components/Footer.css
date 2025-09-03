@@ -1,16 +1,17 @@
 @media (width <= 868px) {
+    .footer__container {
+        height: 80px;
+    }
 
-    .containter__links-texts {
-        flex-direction: column;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        justify-content: center;
-        gap: 1rem;
-        align-items: center;
+    .footer__container .container__links {
+        display: none;
     }
 
     .texts__footer {
         text-align: center;
+        font-size: 15px;
+        text-wrap: auto;
+        margin: 5px;
     }
 }
 

@@ -7,7 +7,7 @@ import imageLinkedin from "../assets/images/Contato/linkedinMinimal.png";
 function Footer() {
 	return (
 		<footer>
-			<div className="relative rounded-t-xl bg-blue-700 mx-5 mr-5 w-auto shadow-[10px_10px_100px_#59f] text-white h-30 overflow-hidden">
+			<div className="footer__container relative rounded-t-xl bg-blue-900 mx-5 mr-5 w-auto shadow-[10px_10px_100px_#59f] text-white h-30 overflow-hidden">
 				<div className="containter__links-texts z-1 absolute bottom-0 h-full justify-between  w-full text-white flex items-center">
 					<p className="texts__footer flex-1 w-full mx-10">
 						&copy; 2025 Leo. Todos os direitos reservados.

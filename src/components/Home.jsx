@@ -19,7 +19,7 @@ const Home = () => {
 			</div>
 
 			{/* Conteúdo centralizado */}
-			<div className="container__texts relative z-10 flex flex-col gap-5 items-center justify-center w-full h-full text-center py-20 px-4">
+			<div className="container__texts relative z-10 flex flex-col gap-5 items-center justify-center w-full h-dvh text-center py-20 px-4">
 				<h1 className="text-7xl font-bold text-white">
 					Leo<span className="text-blue-500">.</span>
 				</h1>
