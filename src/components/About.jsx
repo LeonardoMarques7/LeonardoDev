@@ -65,7 +65,7 @@ const About = () => {
 			distance: "50px", // distância do elemento
 			duration: 2000, // duração da animação em ms
 			delay: 0, // delay inicial
-			reset: true, // se true, animação se repete quando rolar a tela novamente
+			reset: false, // se true, animação se repete quando rolar a tela novamente
 		});
 	}, []);
 	return (
