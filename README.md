@@ -2,7 +2,7 @@
 
 Portfólio profissional desenvolvido para apresentar meus projetos como Desenvolvedor Web / Full Stack.
 
-🔗 Acesse online: [Site](https://leonardomdev.netlify.app/)
+🔗 Acesse online: [Site Online](https://leonardomdev.netlify.app/)
 
 ---
 
