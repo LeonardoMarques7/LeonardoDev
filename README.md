@@ -1,12 +1,48 @@
-# React + Vite
+# 💼 Portfólio - Leonardo Marques
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio profissional desenvolvido para apresentar meus projetos como Desenvolvedor Web / Full Stack.
 
-Currently, two official plugins are available:
+🔗 Acesse online: [Site Online](https://leonardomdev.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Sobre o Projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Este portfólio foi desenvolvido com foco em:
+
+- Performance
+- Responsividade
+- Organização de componentes
+- Experiência do usuário (UX)
+- Código limpo e reutilizável
+
+O objetivo é apresentar aplicações reais desenvolvidas por mim, incluindo projetos full stack com autenticação, banco de dados e deploy em produção.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Front-end
+- React.js
+- JavaScript (ES6+)
+- TailwindCSS
+- HTML5
+- CSS3
+
+### Conceitos Aplicados
+- Componentização
+- Estrutura modular
+- Responsividade (Mobile First)
+- Organização semântica
+- Boas práticas de UI
+
+---
+
+## 📂 Estrutura do Projeto
+
+```bash
+src/
+ ├── components/
+   ├── ui/
+ ├── assets/
+ └── App.jsx
