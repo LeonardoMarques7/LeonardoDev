@@ -93,11 +93,17 @@ const About = () => {
 						src={fotoLeo}
 						className="absolute rotate-5 rounded-2xl"
 						alt="Foto de mim (Leonardo Marques)"
+						width={400}
+						height={500}
+						loading="lazy"
 					/>
 					<img
 						src={fotoLeo}
 						alt="Foto de mim (Leonardo Marques)"
 						className="shadow-blue-200 shadow-2xl rounded-2xl"
+						width={400}
+						height={500}
+						loading="lazy"
 					/>
 				</div>
 			</div>

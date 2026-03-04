@@ -183,6 +183,9 @@ const Projetos = () => {
 															src={image}
 															className="w-full h-full object-cover object-center"
 															alt="Print do Projeto"
+															width={654}
+															height={321}
+															loading="lazy"
 														/>
 													</CarouselItem>
 												))}
