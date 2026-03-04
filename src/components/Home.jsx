@@ -23,9 +23,9 @@ const Home = () => {
 				<h1 className="text-7xl font-bold text-white">
 					Leo<span className="text-blue-500">.</span>
 				</h1>
-				<h3 className="mt-4 text-2xl font-normal text-gray-300">
+				<h2 className="mt-4 text-2xl font-normal text-gray-300">
 					Front-end & Criatividade
-				</h3>
+				</h2>
 				<p className="text-gray-200 max-w-lg my-10">
 					Desenvolvedor Frontend que combina simplicidade elegante com toques
 					criativos únicos

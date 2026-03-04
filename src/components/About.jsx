@@ -103,17 +103,19 @@ const About = () => {
 			</div>
 			<div className="techs__container pt-10">
 				<Marquee className="marquee__tech">
-					{techBadges.map((item, i) => (
-						<li
-							key={i}
-							className={`badge__tech flex items-center gap-4 transition-all ease-in-out duration-300 hover:scale-110 list-none -z-10 px-5 py-2 rounded-full ${
-								item.style
-							} ${i % 2 === 0 ? " hover:rotate-2" : " hover:-rotate-2"}`}
-						>
-							{item.icon}
-							{item.tech}
-						</li>
-					))}
+					<ul className="flex items-center gap-4 list-none p-0 m-0">
+						{techBadges.map((item, i) => (
+							<li
+								key={i}
+								className={`badge__tech flex items-center gap-4 transition-all ease-in-out duration-300 hover:scale-110 -z-10 px-5 py-2 rounded-full ${
+									item.style
+								} ${i % 2 === 0 ? " hover:rotate-2" : " hover:-rotate-2"}`}
+							>
+								{item.icon}
+								{item.tech}
+							</li>
+						))}
+					</ul>
 				</Marquee>
 			</div>
 		</section>

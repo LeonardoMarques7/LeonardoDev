@@ -59,8 +59,8 @@ export default function NavigationPill() {
 											? "text-white"
 											: "text-gray-900"
 										: isDarkBackground
-										? "text-white/60 hover:text-white/80"
-										: "text-gray-600 hover:text-gray-800"
+											? "text-white/90 hover:text-white"
+											: "text-gray-700 hover:text-gray-900"
 								}`}
 							>
 								{activeSection === item.id && (
