@@ -56,8 +56,11 @@ function MenuBar() {
 
 	return (
 		<DropdownMenu>
-			<DropdownMenuTrigger className="fixed z-50 right-5 top-5 bg-white border-2 p-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-200">
-				<Menu className="w-5 h-5" />
+			<DropdownMenuTrigger
+				aria-label="Abrir menu de navegação"
+				className="fixed z-50 right-5 top-5 bg-white border-2 p-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-200"
+			>
+				<Menu className="w-5 h-5" aria-hidden="true" />
 			</DropdownMenuTrigger>
 
 			<DropdownMenuContent className="mx-4 p-2 bg-white rounded-xl shadow-xl">
