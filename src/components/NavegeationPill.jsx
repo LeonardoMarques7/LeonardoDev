@@ -66,7 +66,7 @@ export default function NavigationPill() {
 								{activeSection === item.id && (
 									<motion.div
 										layoutId="navbar-active"
-										className="absolute inset-0 bg-blue-400/60 rounded-full"
+										className="absolute inset-0 bg-blue-700 rounded-full"
 										transition={{ type: "spring", bounce: 0.25, duration: 0.5 }}
 									/>
 								)}

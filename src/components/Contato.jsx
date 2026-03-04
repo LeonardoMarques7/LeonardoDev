@@ -24,6 +24,9 @@ const Contato = () => {
 							className="image__contato"
 							src={imageEmail}
 							alt="Logo do Gmail do Google"
+							width={40}
+							height={40}
+							loading="lazy"
 						/>
 					</a>
 				</li>
@@ -36,6 +39,9 @@ const Contato = () => {
 							className="image__contato"
 							src={imageGitHub}
 							alt="Logo do GitHub"
+							width={40}
+							height={40}
+							loading="lazy"
 						/>
 					</a>
 				</li>
@@ -48,6 +54,9 @@ const Contato = () => {
 							className="image__contato"
 							src={imageLinkedin}
 							alt="Logo do Linkedin"
+							width={40}
+							height={40}
+							loading="lazy"
 						/>
 					</a>
 				</li>
